@@ -9,17 +9,35 @@ using System.Threading.Tasks;
 
 namespace BerlinClock.Classes.Clock
 {
+    /// <summary>
+    /// Abstracted Template behavior for the Clock sections or "Display Elements"
+    /// </summary>
     public abstract class ClockDisplayElement : ILampDisplayRow
     {
-        public const string ZeroMinutes = "";
-        public const string SecondsLt5 = "";
-        public const string Minutes = "";
-        
+        /// <summary>
+        /// Public "Zero" optimized states
+        /// </summary>
+        public const string ZeroMinutesMaj = "OOOOOOOOOOO";
+        public const string ZeroMinutesMin = "OOOO";
+        public const string ZeroHoursMaj = "OOOO";
 
+
+        /// <summary>
+        /// Generalised value 
+        /// </summary>
         public int Value { get; set; }
 
+
+        /// <summary>
+        /// Provide polymorphic 
+        /// </summary>
+        /// <returns></returns>
         public abstract string GetLampDisplay();
 
+        /// <summary>
+        /// Override ToString for simplified direct "print to test" behavior
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return GetLampDisplay();

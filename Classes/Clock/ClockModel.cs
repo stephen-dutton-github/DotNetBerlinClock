@@ -21,7 +21,7 @@ namespace BerlinClock.Classes.Clock
         SecondsByFive
     }
 
-    public class ClockModel : ClockDisplayElement, IFormatProvider
+    public class MainClockGroupDisplay : ClockDisplayElement, IFormatProvider
     {
 
         public SecondIndicator          Secs   { get; set; } = new SecondIndicator();
@@ -31,17 +31,26 @@ namespace BerlinClock.Classes.Clock
         public MinuteAccumulatorMinor   MinMin { get; set; } = new MinuteAccumulatorMinor();
         public List<ClockDisplayElement>     DisplayElements { get; set; } = new List<ClockDisplayElement>();
 
-        public ClockModel()
+        public MainClockGroupDisplay()
         {
             DisplayElements = new ClockDisplayElement[] { Secs, HrsMaj, HrsMin, MinMaj, MinMin }.ToList();
         }
 
+        /// <summary>
+        /// IFormatProvider imlementaion 
+        /// </summary>
+        /// <param name="formatType"></param>
+        /// <returns></returns>
         public object GetFormat(Type formatType)
         {
             //ignore formatType we only want the time for this class
             return "HH24:mm:ss";
         }
 
+        /// <summary>
+        /// Assignemnt of formatted time to the Display Elements
+        /// </summary>
+        /// <param name="aTime"></param>
         public void SetTime(DateTime aTime)
         {
             Secs.Value = aTime.Second;
@@ -84,14 +93,18 @@ namespace BerlinClock.Classes.Clock
         }
 
 
-
+        /// <summary>
+        /// GetLampDisplay is called implicitly by the ToString method in order to simplify serialization, 
+        /// testing and recursion with Clock DiusplayElement object groups
+        /// </summary>
+        /// <returns></returns>
         public override string GetLampDisplay()                
         {
+            //Polymorphic recursion for lamp display behavior.
             var result = new StringBuilder();
-            DisplayElements
-                    .Select(k => k.GetLampDisplay())
-                    .ToList()
-                    .ForEach(k => result.AppendLine(k));
+            DisplayElements .Select(k => k.GetLampDisplay())
+                            .ToList()
+                            .ForEach(k => result.AppendLine(k));
 
             return result.ToString();
         }
