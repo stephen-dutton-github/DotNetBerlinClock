@@ -1,22 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BerlinClock", "BerlinClock.csproj", "{0451204D-BF86-43E1-B560-FC9AC830B9A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Hook|Any CPU = Hook|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{0451204D-BF86-43E1-B560-FC9AC830B9A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0451204D-BF86-43E1-B560-FC9AC830B9A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0451204D-BF86-43E1-B560-FC9AC830B9A9}.Hook|Any CPU.ActiveCfg = Hook|Any CPU
+		{0451204D-BF86-43E1-B560-FC9AC830B9A9}.Hook|Any CPU.Build.0 = Hook|Any CPU
 		{0451204D-BF86-43E1-B560-FC9AC830B9A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0451204D-BF86-43E1-B560-FC9AC830B9A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {60F412A6-7599-4E67-9E0D-0331BEA382B8}
 	EndGlobalSection
 EndGlobal

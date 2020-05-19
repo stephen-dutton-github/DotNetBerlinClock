@@ -1,0 +1,10 @@
+C:\Users\steph\Source\Repos\stephen-dutton-github\DotNetBerlinClock\bin\Hook\BerlinClock.dll.config
+C:\Users\steph\Source\Repos\stephen-dutton-github\DotNetBerlinClock\bin\Hook\BerlinClock.dll
+C:\Users\steph\Source\Repos\stephen-dutton-github\DotNetBerlinClock\bin\Hook\BerlinClock.pdb
+C:\Users\steph\Source\Repos\stephen-dutton-github\DotNetBerlinClock\bin\Hook\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\steph\Source\Repos\stephen-dutton-github\DotNetBerlinClock\bin\Hook\TechTalk.SpecFlow.dll
+C:\Users\steph\Source\Repos\stephen-dutton-github\DotNetBerlinClock\obj\Hook\BerlinClock.csprojAssemblyReference.cache
+C:\Users\steph\Source\Repos\stephen-dutton-github\DotNetBerlinClock\obj\Hook\BerlinClock.csproj.CoreCompileInputs.cache
+C:\Users\steph\Source\Repos\stephen-dutton-github\DotNetBerlinClock\obj\Hook\BerlinClock.csproj.CopyComplete
+C:\Users\steph\Source\Repos\stephen-dutton-github\DotNetBerlinClock\obj\Hook\BerlinClock.dll
+C:\Users\steph\Source\Repos\stephen-dutton-github\DotNetBerlinClock\obj\Hook\BerlinClock.pdb
