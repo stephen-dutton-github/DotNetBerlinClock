@@ -2,6 +2,8 @@
 using TechTalk.SpecFlow;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
+using BerlinClock.Classes;
+using BerlinClock.Interfaces;
 
 namespace BerlinClock
 {
@@ -24,7 +26,7 @@ namespace BerlinClock
 #if HOOK
             Assert.IsTrue(true);
 #elif DEBUG
-            Assert.AreEqual(berlinClock.convertTime(theTime), theExpectedBerlinClockOutput);
+            Assert.AreEqual(berlinClock.ConvertTime(theTime), theExpectedBerlinClockOutput);
 #endif
         }
 
