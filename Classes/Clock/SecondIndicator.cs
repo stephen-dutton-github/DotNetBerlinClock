@@ -8,6 +8,6 @@ namespace BerlinClock.Classes.Clock
 {
     public class SecondIndicator : ClockDisplayElement
     {
-        public override string GetLampDisplay() => Value % 2 == 0 ? "R" : "Y";
+        public override string GetLampDisplay() => Value % 2 == 0 ? "O" : "Y";
     }
 }

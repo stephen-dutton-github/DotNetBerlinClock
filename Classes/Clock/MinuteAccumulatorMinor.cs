@@ -17,8 +17,12 @@ namespace BerlinClock.Classes.Clock
             var result = new StringBuilder();
             
             var activeLamps = Value < 5 ? Value : Value % 5;
-            
-            for(var k=1; k < activeLamps; k++) result.Append("R");
+
+            for (var k = 1; k < activeLamps; k++)
+                result.Append("R");
+
+            if (activeLamps == 1)   //bounding issue
+                result.Append("R");
 
             return result.ToString().PadRight(4,'O');
 

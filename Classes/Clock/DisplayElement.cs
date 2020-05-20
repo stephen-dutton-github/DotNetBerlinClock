@@ -19,13 +19,13 @@ namespace BerlinClock.Classes.Clock
         /// </summary>
         public const string ZeroMinutesMaj = "OOOOOOOOOOO";
         public const string ZeroMinutesMin = "OOOO";
-        public const string ZeroHoursMaj = "OOOO";
+        public const string ZeroHours = "OOOO";
 
 
         /// <summary>
         /// Generalised value 
         /// </summary>
-        public int Value { get; set; }
+        public long Value { get; set; }
 
 
         /// <summary>

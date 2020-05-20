@@ -53,6 +53,7 @@ namespace BerlinClock.Classes.Clock
         /// <param name="aTime"></param>
         public void SetTime(DateTime aTime)
         {
+            Value = aTime.ToFileTime();
             Secs.Value = aTime.Second;
             HrsMaj.Value = HrsMin.Value = aTime.Hour;
             MinMaj.Value = MinMin.Value = aTime.Minute;
@@ -65,18 +66,9 @@ namespace BerlinClock.Classes.Clock
         /// <param name="aTime"></param>
         public void SetTime(string aTime)
         {
-            try
-            {
-                FormatTime(aTime, this, SetTime);
-            }
-            catch (Exception ex)
-            {
-                Assert.Inconclusive("Exception occured..", ex.StackTrace);
-            }
-            finally
-            {
-                SetTime(DateTime.Now);
-            }
+           
+            FormatTime(aTime, this, SetTime);
+
         }
 
         /// <summary>

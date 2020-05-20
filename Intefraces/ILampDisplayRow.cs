@@ -8,7 +8,7 @@ namespace BerlinClock.Interfaces
 {
     public interface ILampDisplayRow
     {
-        int Value{ get; set; }
+        long Value{ get; set; }
         string GetLampDisplay();
     }
 }
