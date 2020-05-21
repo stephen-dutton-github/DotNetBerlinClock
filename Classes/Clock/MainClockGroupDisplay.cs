@@ -53,11 +53,11 @@ namespace BerlinClock.Classes.Clock
         /// <param name="aTime"></param>
         public void SetTime(DateTime aTime)
         {
-            Value = aTime.ToFileTime();
             Secs.Value = aTime.Second;
             HrsMaj.Value = HrsMin.Value = aTime.Hour;
             MinMaj.Value = MinMin.Value = aTime.Minute;
         }
+
 
         /// <summary>
         /// Public string overload of the SetTime function used to filter,
@@ -66,22 +66,16 @@ namespace BerlinClock.Classes.Clock
         /// <param name="aTime"></param>
         public void SetTime(string aTime)
         {
-           
-            FormatTime(aTime, this, SetTime);
-
-        }
-
-        /// <summary>
-        /// Exception generating date fomatter - used above as a trap for exception analysis
-        /// delegates to the correct function if all ok
-        /// </summary>
-        /// <param name="aTime"></param>
-        /// <param name="formatProvider"></param>
-        /// <param name="slaveFunction"></param>
-        private void FormatTime(string aTime, IFormatProvider formatProvider, Action<DateTime> slaveFunction)
-        {
-            var result = DateTime.Parse(aTime, formatProvider, System.Globalization.DateTimeStyles.None);
-            slaveFunction(result);
+            var set24Notation = aTime.Trim().EndsWith("24:00:00");
+            if (set24Notation)
+            {
+                aTime = aTime.Replace("24:00:00", "00:00:00");
+            }
+            var result = DateTime.Parse(aTime, this, System.Globalization.DateTimeStyles.None);
+            Value = result.ToFileTime();
+            Secs.Value = result.Second;
+            HrsMaj.Value = HrsMin.Value = set24Notation ? 24 : result.Hour ;
+            MinMaj.Value = MinMin.Value = result.Minute;
         }
 
 
@@ -93,12 +87,9 @@ namespace BerlinClock.Classes.Clock
         public override string GetLampDisplay()                
         {
             //Polymorphic recursion for lamp display behavior.
-            var result = new StringBuilder();
-            DisplayElements .Select(k => k.GetLampDisplay())
-                            .ToList()
-                            .ForEach(k => result.AppendLine(k));
 
-            return result.ToString();
+            var result = String.Join("\r\n", DisplayElements.Select(k => k.GetLampDisplay()).ToArray());
+            return result;
         }
 
         

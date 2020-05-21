@@ -3,6 +3,7 @@ C:\Users\steph\Source\Repos\stephen-dutton-github\DotNetBerlinClock\bin\Debug\Be
 C:\Users\steph\Source\Repos\stephen-dutton-github\DotNetBerlinClock\bin\Debug\BerlinClock.pdb
 C:\Users\steph\Source\Repos\stephen-dutton-github\DotNetBerlinClock\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\Users\steph\Source\Repos\stephen-dutton-github\DotNetBerlinClock\bin\Debug\TechTalk.SpecFlow.dll
+C:\Users\steph\Source\Repos\stephen-dutton-github\DotNetBerlinClock\obj\Debug\BerlinClock.csprojAssemblyReference.cache
 C:\Users\steph\Source\Repos\stephen-dutton-github\DotNetBerlinClock\obj\Debug\BerlinClock.csproj.CoreCompileInputs.cache
 C:\Users\steph\Source\Repos\stephen-dutton-github\DotNetBerlinClock\obj\Debug\BerlinClock.csproj.CopyComplete
 C:\Users\steph\Source\Repos\stephen-dutton-github\DotNetBerlinClock\obj\Debug\BerlinClock.dll

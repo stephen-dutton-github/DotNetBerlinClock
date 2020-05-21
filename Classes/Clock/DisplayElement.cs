@@ -21,6 +21,11 @@ namespace BerlinClock.Classes.Clock
         public const string ZeroMinutesMin = "OOOO";
         public const string ZeroHours = "OOOO";
 
+        public const char   YELLOW = 'Y';
+        public const char   RED = 'R';
+        public const char  ORANGE = 'O';
+
+
 
         /// <summary>
         /// Generalised value 

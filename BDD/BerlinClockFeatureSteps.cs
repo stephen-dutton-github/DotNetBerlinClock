@@ -23,11 +23,7 @@ namespace BerlinClock
         [Then(@"the clock should look like")]
         public void ThenTheClockShouldLookLike(string theExpectedBerlinClockOutput)
         {
-#if HOOK
-            Assert.IsTrue(true);
-#elif DEBUG
-            Assert.AreEqual(berlinClock.ConvertTime(theTime), theExpectedBerlinClockOutput);
-#endif
+            Assert.AreEqual(berlinClock.ConvertTime(theTime).Trim(), theExpectedBerlinClockOutput.Trim());
         }
 
     }

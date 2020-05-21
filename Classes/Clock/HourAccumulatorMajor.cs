@@ -14,15 +14,15 @@ namespace BerlinClock.Classes.Clock
             if (Value < 1)
                 return ZeroHours;
 
-            var result = new StringBuilder();
+            var sb = new StringBuilder();
 
             for (var k = 1; k <= Value; k++)
             {
-                var lamp = k % 5 == 0 ? "R" : String.Empty; 
-                result.Append(lamp);
+                if(k % 5 == 0)
+                    sb.Append(RED);
             }
-
-            return result.ToString().PadRight(4, 'O');
+            var result = sb.ToString().PadRight(4, ORANGE);
+            return result;
 
         }
     }

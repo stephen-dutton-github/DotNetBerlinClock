@@ -1,4 +1,5 @@
-﻿using BerlinClock.Interfaces;
+﻿using BerlinClock.Classes.Clock;
+using BerlinClock.Interfaces;
 using System    ;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace BerlinClock.Classes
     public class TimeConverter : ITimeConverter
     {
 
-        
+        private MainClockGroupDisplay Clock { get; set; } = new MainClockGroupDisplay();
 
         /// <summary>
         /// Default Implementation of ITimeConverter
@@ -22,21 +23,8 @@ namespace BerlinClock.Classes
         /// <returns></returns>
         public string ConvertTime(string aTime)
         {
-            var result = string.Empty;
-            try
-            {
-                //var time = new (aTime, this);
-                //result  = time.ToString();
-            }
-            catch (FormatException fex)
-            {
-                result += $"Error:{fex.Message}";
-            }
-            finally
-            {
-                result += "\n";
-            }
-
+            Clock.SetTime(aTime);
+            var result = Clock.ToString();
             return result;
         }
 

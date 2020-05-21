@@ -11,20 +11,21 @@ namespace BerlinClock.Classes.Clock
     {
         public override string GetLampDisplay()
         {
+
+
             if (Value < 1)
                 return ZeroMinutesMin;
 
-            var result = new StringBuilder();
+            var sb = new StringBuilder();
             
             var activeLamps = Value < 5 ? Value : Value % 5;
 
-            for (var k = 1; k < activeLamps; k++)
-                result.Append("R");
+            for (var k = 0; k < activeLamps ; k++)
+                sb.Append(YELLOW);
 
-            if (activeLamps == 1)   //bounding issue
-                result.Append("R");
+            var result = sb.ToString().PadRight(4, ORANGE);
+            return result;
 
-            return result.ToString().PadRight(4,'O');
 
         }
     }
